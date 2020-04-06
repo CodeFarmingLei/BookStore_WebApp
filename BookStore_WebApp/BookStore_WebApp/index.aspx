@@ -10,7 +10,7 @@
 <body>
     <form id="index" runat="server">
         <div>
-
+            <h1>BookStore 网上书店</h1>
         </div>
     </form>
 </body>
