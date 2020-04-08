@@ -7,7 +7,7 @@ using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 
-namespace BookStoreModel
+namespace BookStore.Model
 {
     public static class SqlHelper
     {
@@ -21,7 +21,7 @@ namespace BookStoreModel
         /// <returns>受影响行数</returns>
         public static int ExecuteNonQuery(string sql, SqlParameter[] param)
         {
-            using (SqlConnection con = new SqlConnection(constr))
+            using (SqlConnection con = new SqlConnection(conStr))
             {
                 con.Open();
                 using (SqlCommand cmd = new SqlCommand(sql, con))
@@ -40,7 +40,7 @@ namespace BookStoreModel
         /// <returns>系统虚表</returns>
         public static DataTable Query(string sql, SqlParameter[] param)
         {
-            using (SqlDataAdapter sda = new SqlDataAdapter(sql, constr))
+            using (SqlDataAdapter sda = new SqlDataAdapter(sql, conStr))
             {
                 if (param != null)
                     sda.SelectCommand.Parameters.AddRange(param);
@@ -58,7 +58,7 @@ namespace BookStoreModel
         /// <returns>单一值</returns>
         public static object ExecuteSaclar(string sql, SqlParameter[] param)
         {
-            using (SqlConnection con = new SqlConnection(constr))
+            using (SqlConnection con = new SqlConnection(conStr))
             {
                 con.Open();
                 using (SqlCommand cmd = new SqlCommand(sql, con))

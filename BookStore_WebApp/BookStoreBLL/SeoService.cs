@@ -1,24 +1,48 @@
-﻿using BookStoreDAL;
-using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using BookStore.DAL;
+using BookStore.Model;
 
-namespace BookStoreBLL
+namespace BookStore.BLL
 {
     public class SeoService
     {
-        SeoManager sm = new SeoManager();
+        private SeoManager dal = new SeoManager();
 
-        /// <summary>
-        /// 全查询
-        /// </summary>
-        /// <returns></returns>
-        public DataTable GetAllSeo()
+        public int Add(Seo seo)
         {
-            return sm.GetAllSeo();
+            return dal.Add(seo);
+        }
+
+        public int Edit(Seo seo)
+        {
+            return dal.Edit(seo);
+        }
+
+        public int Delete(Seo seo)
+        {
+            return dal.Delete(seo);
+        }
+
+        public List<Seo> GetSeoList()
+        {
+            return dal.GetSeoList();
+        }
+
+        public List<Seo> GetSeoListByTitle(string title)
+        {
+            return dal.GetSeoListByTitle(title);
+        }
+
+
+        public List<Seo> GetSeoListByWebMenuId(int webMenuId)
+        {
+            return dal.GetSeoListByWebMenuId(webMenuId);
+        }
+
+
+        public Seo GetSeo(int id)
+        {
+            return dal.GetSeo(id);
         }
     }
 }

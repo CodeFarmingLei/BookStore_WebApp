@@ -1,13 +1,9 @@
-﻿using BookStoreModel;
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using BookStore.Model;
 
-namespace BookStoreDAL
+namespace BookStore.DAL
 {
     public class RolesManager
     {
@@ -21,7 +17,7 @@ namespace BookStoreDAL
             string sql = "select count(*) from Roles where Title = @Title";
             SqlParameter[] param =
             {
-                new SqlParameter("@Title",title)
+                new SqlParameter("@Title",title) 
             };
             object ob = SqlHelper.ExecuteSaclar(sql, param);
             return int.Parse(ob.ToString()) > 0;
@@ -37,7 +33,7 @@ namespace BookStoreDAL
             string sql = "insert into Roles(Title) values(@Title)";
             SqlParameter[] param =
             {
-                new SqlParameter("@Title",r.Title)
+                new SqlParameter("@Title",r.Title) 
             };
             return SqlHelper.ExecuteNonQuery(sql, param);
         }

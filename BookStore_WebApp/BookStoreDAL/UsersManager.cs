@@ -1,13 +1,10 @@
-﻿using BookStoreModel;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using BookStore.Model;
 
-namespace BookStoreDAL
+namespace BookStore.DAL
 {
     public class UsersManager
     {
@@ -21,7 +18,7 @@ namespace BookStoreDAL
             string sql = "select * from Users where Email = @Email";
             SqlParameter[] param =
             {
-                new SqlParameter("@Email",email)
+                new SqlParameter("@Email",email) 
             };
             return SqlHelper.Query(sql, param).Rows.Count > 0;
         }
@@ -54,7 +51,7 @@ namespace BookStoreDAL
                 new SqlParameter("@Photo",u.Photo),
                 new SqlParameter("@CreateTime",u.CreateTime),
                 new SqlParameter("@RolesId",u.RolesId),
-                new SqlParameter("@Id",u.Id)
+                new SqlParameter("@Id",u.Id) 
             };
             return SqlHelper.ExecuteNonQuery(sql, param);
         }
@@ -97,7 +94,7 @@ namespace BookStoreDAL
         //.net framework 4.8 --> C# 8.0
         public List<Users> GetUsersListByNickName(string nickname)
         {
-            string sql = "select Id,Email,Password,NickName,Photo,CreateTime,RolesId from Users where NickName like '%" + nickname + "%' order by CreateTime desc";
+            string sql = "select Id,Email,Password,NickName,Photo,CreateTime,RolesId from Users where NickName like '%"+nickname+"%' order by CreateTime desc";
             var dt = SqlHelper.Query(sql, null);
             var list = new List<Users>();
             foreach (DataRow item in dt.Rows)
@@ -128,7 +125,7 @@ namespace BookStoreDAL
             };
             var dt = SqlHelper.Query(sql, param);
 
-            if (dt.Rows.Count > 0)
+            if(dt.Rows.Count > 0)
                 return new Users()
                 {
                     Id = int.Parse(dt.Rows[0]["Id"].ToString()),
@@ -177,7 +174,7 @@ namespace BookStoreDAL
 
             SqlParameter[] param =
             {
-                new SqlParameter("@RolesId",rolesId)
+                new SqlParameter("@RolesId",rolesId) 
             };
             var dt = SqlHelper.Query(sql, param);
             var list = new List<Users>();
@@ -197,15 +194,6 @@ namespace BookStoreDAL
             }
 
             return list;
-        }
-        /// <summary>
-        /// 全查询
-        /// </summary>
-        /// <returns></returns>
-        public DataTable GetAllUsers()
-        {
-            string sql = " SELECT * FROM Users ";
-            return SqlHelper.Query(sql, null);
         }
     }
 }

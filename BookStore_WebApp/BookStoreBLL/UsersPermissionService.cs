@@ -1,24 +1,35 @@
-﻿using BookStoreDAL;
-using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using BookStore.DAL;
+using BookStore.Model;
 
-namespace BookStoreBLL
+namespace BookStore.BLL
 {
     public class UsersPermissionService
     {
-        UsersPermissionManager upm = new UsersPermissionManager();
+        private UsersPermissionManager dal = new UsersPermissionManager();
 
-        /// <summary>
-        /// 全查询
-        /// </summary>
-        /// <returns></returns>
-        public DataTable GetAllUsersPermission()
+        public int Add(UsersPermission model)
         {
-            return upm.GetAllUsersPermission();
+            return dal.Add(model);
+
         }
+
+        public int Edit(UsersPermission model)
+        {
+            return dal.Edit(model);
+
+        }
+
+        public int Delete(UsersPermission model)
+        {
+            return dal.Delete(model);
+
+        }
+
+        public List<UsersPermission> GetUsersPermissionsByRolesId(int rid)
+        {
+            return dal.GetUsersPermissionsByRolesId(rid);
+        }
+
     }
 }

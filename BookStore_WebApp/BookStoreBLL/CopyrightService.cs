@@ -1,24 +1,37 @@
-﻿using BookStoreDAL;
-using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
+using BookStore.DAL;
+using BookStore.Model;
 
-namespace BookStoreBLL
+namespace BookStore.BLL
 {
     public class CopyrightService
     {
-        CopyrightManager cm = new CopyrightManager();
+        private CopyrightManager dal = new CopyrightManager();
 
-        /// <summary>
-        /// 全查询
-        /// </summary>
-        /// <returns></returns>
-        public DataTable GetAllCopyright()
+        public bool IsExist()
         {
-            return cm.GetAllCopyright();
+            return dal.IsExist();
         }
+
+
+        public int Add(Copyright model)
+        {
+            return dal.Add(model);
+        }
+
+        public int Edit(Copyright model)
+        {
+            return dal.Edit(model);
+        }
+
+
+
+        public Copyright GetCopyright()
+        {
+            return dal.GetCopyright();
+
+        }
+
+
     }
 }

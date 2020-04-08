@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BookStoreModel
+namespace BookStore.Model
 {
     public class UsersPermission    //权限分配表
     {

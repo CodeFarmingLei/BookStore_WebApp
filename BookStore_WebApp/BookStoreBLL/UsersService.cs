@@ -1,17 +1,13 @@
-﻿using BookStoreDAL;
-using BookStoreModel;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using BookStore.DAL;
+using BookStore.Model;
 
-namespace BookStoreBLL
+namespace BookStore.BLL
 {
     public class UsersService
     {
-        UsersManager um = new UsersManager();
+        private UsersManager dal = new UsersManager();
 
         /// <summary>
         /// 判断电子邮件是否存在的
@@ -20,44 +16,49 @@ namespace BookStoreBLL
         /// <returns></returns>
         public bool IsExist(string email)
         {
-            return um.IsExist(email);
+            return dal.IsExist(email);
         }
 
 
         public int Add(Users u)
         {
-            return um.Add(u);
+            return dal.Add(u);
         }
 
 
         public int Edit(Users u)
         {
-            return um.Edit(u);
+            return dal.Edit(u);
         }
 
         public int Delete(Users u)
         {
-            return um.Delete(u);
+            return dal.Delete(u);
         }
 
         public List<Users> GetUsersList()
         {
-            return um.GetUsersList();
+            return dal.GetUsersList();
         }
-
+        //.net framework 4.5 --> C# 5.0
+        //.net framework 4.6 --> C# 6.0
+        //.net framework 4.7 --> C# 7.0
+        //.net framework 4.8 --> C# 8.0
         public List<Users> GetUsersListByNickName(string nickname)
         {
-            return um.GetUsersListByNickName(nickname);
+            return dal.GetUsersListByNickName(nickname);
         }
+
 
         public Users GetUsersById(int id)
         {
-            return um.GetUsersById(id);
+            return dal.GetUsersById(id);
         }
+
 
         public Users Login(string email, string pwd)
         {
-            return um.Login(email,pwd);
+            return dal.Login(email, pwd);
         }
 
         /// <summary>
@@ -67,15 +68,7 @@ namespace BookStoreBLL
         /// <returns></returns>
         public List<Users> GetUsersByRolesId(int rolesId)
         {
-            return um.GetUsersByRolesId(rolesId);
-        }
-        /// <summary>
-        /// 全查询
-        /// </summary>
-        /// <returns></returns>
-        public DataTable GetAllUsers()
-        {
-            return um.GetAllUsers();
+            return dal.GetUsersByRolesId(rolesId);
         }
     }
 }

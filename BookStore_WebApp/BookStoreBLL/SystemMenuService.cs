@@ -1,24 +1,48 @@
-﻿using BookStoreDAL;
-using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using BookStore.DAL;
+using BookStore.Model;
 
-namespace BookStoreBLL
+namespace BookStore.BLL
 {
     public class SystemMenuService
     {
-        SystemMenuManager smm = new SystemMenuManager();
+        private SystemMenuManager dal = new SystemMenuManager();
 
-        /// <summary>
-        /// 全查询
-        /// </summary>
-        /// <returns></returns>
-        public DataTable GetAllSystemMenu()
+        public int Add(SystemMenu m)
         {
-            return smm.GetAllSystemMenu();
+            return dal.Add(m);
+        }
+
+        public int Edit(SystemMenu m)
+        {
+            return dal.Edit(m);
+        }
+
+        public int Delete(SystemMenu m)
+        {
+            return dal.Delete(m);
+        }
+
+        public List<SystemMenu> GetSystemMenusList()
+        {
+            return dal.GetSystemMenusList();
+        }
+
+
+        public List<SystemMenu> GetSystemMenusListByTitle(string title)
+        {
+            return dal.GetSystemMenusListByTitle(title);
+        }
+
+        public List<SystemMenu> GetSystemMenusListByParentId(int parentId = 0)
+        {
+            return dal.GetSystemMenusListByParentId(parentId);
+        }
+
+
+        public SystemMenu GetSystemMenuById(int id)
+        {
+            return dal.GetSystemMenuById(id);
         }
     }
 }

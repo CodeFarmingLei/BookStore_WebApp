@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BookStoreModel
+namespace BookStore.Model
 {
     public class WebMenu //网站菜单表，前台界面的导航栏信息
     {

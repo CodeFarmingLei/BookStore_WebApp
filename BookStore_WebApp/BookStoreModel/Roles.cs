@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BookStoreModel
+namespace BookStore.Model
 {
     public class Roles  //身份/权限表
     {

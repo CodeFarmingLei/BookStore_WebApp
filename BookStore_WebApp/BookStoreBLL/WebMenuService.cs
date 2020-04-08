@@ -1,24 +1,47 @@
-﻿using BookStoreDAL;
-using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using BookStore.DAL;
+using BookStore.Model;
 
-namespace BookStoreBLL
+namespace BookStore.BLL
 {
     public class WebMenuService
     {
-        WebMenuManager wmm = new WebMenuManager();
-
-        /// <summary>
-        /// 全查询
-        /// </summary>
-        /// <returns></returns>
-        public DataTable GetAllWebMenu()
+        private WebMenuManager dal = new WebMenuManager();
+        public int Add(WebMenu m)
         {
-            return wmm.GetAllWebMenu();
+            return dal.Add(m);
+        }
+
+        public int Edit(WebMenu m)
+        {
+            return dal.Edit(m);
+        }
+
+        public int Delete(WebMenu m)
+        {
+            return dal.Delete(m);
+        }
+
+        public List<WebMenu> GetWebMenusList()
+        {
+            return dal.GetWebMenusList();
+        }
+
+
+        public List<WebMenu> GetWebMenusListByTitle(string title)
+        {
+            return dal.GetWebMenusListByTitle(title);
+        }
+
+        public List<WebMenu> GetWebMenusListByParentId(int parentId = 0)
+        {
+            return dal.GetWebMenusListByParentId(parentId);
+        }
+
+
+        public WebMenu GetWebMenuById(int id)
+        {
+            return dal.GetWebMenuById(id);
         }
     }
 }
