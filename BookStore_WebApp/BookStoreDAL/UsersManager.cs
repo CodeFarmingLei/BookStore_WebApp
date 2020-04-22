@@ -66,6 +66,19 @@ namespace BookStore.DAL
             return SqlHelper.ExecuteNonQuery(sql, param);
         }
 
+        /// <summary>
+        /// 删除多个值的时候使用的
+        /// </summary>
+        /// <param name="idList">删除id的集合</param>
+        /// <returns>受影响行数</returns>
+        public int DeleteList(string idList)
+        {
+            string sql = "delete from Users where id in ("+idList+")"; //删除多个值
+            return SqlHelper.ExecuteNonQuery(sql, null);
+        }
+
+
+
         public List<Users> GetUsersList()
         {
             string sql = "select Id,Email,Password,NickName,Photo,CreateTime,RolesId from Users order by CreateTime desc";

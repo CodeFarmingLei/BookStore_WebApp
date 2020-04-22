@@ -97,7 +97,7 @@ namespace BookStore.DAL
         /// <returns>权限信息集合</returns>
         public List<Roles> GetRolesListByTitle(string title)
         {
-            string sql = $"select Id,Title from Roles where Title like '%{title}%'  order by Id desc";
+            string sql = "select Id,Title from Roles where Title like '%"+title+"%'  order by Id desc";
             var dt = SqlHelper.Query(sql, null);
             List<Roles> list = new List<Roles>();
             foreach (DataRow dr in dt.Rows)

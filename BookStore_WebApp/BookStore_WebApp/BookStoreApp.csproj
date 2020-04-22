@@ -43,6 +43,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AspNetPager">
+      <HintPath>App_Data\AspNetPager.DLL</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -127,6 +130,7 @@
     <Content Include="Admins\images\001.jpg" />
     <Content Include="Admins\images\404.png" />
     <Content Include="Admins\images\add.png" />
+    <Content Include="Admins\images\AddWZ.png" />
     <Content Include="Admins\images\btnbg.png" />
     <Content Include="Admins\images\btnbg1.png" />
     <Content Include="Admins\images\btnbg2.png" />
@@ -146,6 +150,7 @@
     <Content Include="Admins\images\d05.png" />
     <Content Include="Admins\images\d06.png" />
     <Content Include="Admins\images\d07.png" />
+    <Content Include="Admins\images\DelWZ.png" />
     <Content Include="Admins\images\diskbg.png" />
     <Content Include="Admins\images\dp.png" />
     <Content Include="Admins\images\f01.png" />
@@ -264,9 +269,19 @@
     <Content Include="Admins\main\Left.aspx" />
     <Content Include="Admins\main\Main.aspx" />
     <Content Include="Admins\main\Top.aspx" />
+    <Content Include="Admins\Roles\AddRoles.aspx" />
+    <Content Include="Admins\Roles\DeleteRoles.aspx" />
+    <Content Include="Admins\Roles\EditRoles.aspx" />
+    <Content Include="Admins\Roles\RolesList.aspx" />
     <Content Include="Admins\src\jquery.gvChart-1.0.1.js" />
+    <Content Include="Admins\SystemMenu\SystemMenuList.aspx" />
+    <Content Include="Admins\Users\AddUsers.aspx" />
+    <Content Include="Admins\Users\DeleteUsers.aspx" />
+    <Content Include="Admins\Users\EditUsers.aspx" />
+    <Content Include="Admins\Users\UsersList.aspx" />
     <Content Include="Global.asax" />
     <Content Include="index.aspx" />
+    <Content Include="upload\users\codelei.jpg" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -304,6 +319,72 @@
     </Compile>
     <Compile Include="Admins\main\Top.aspx.designer.cs">
       <DependentUpon>Top.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admins\Roles\AddRoles.aspx.cs">
+      <DependentUpon>AddRoles.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admins\Roles\AddRoles.aspx.designer.cs">
+      <DependentUpon>AddRoles.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admins\Roles\DeleteRoles.aspx.cs">
+      <DependentUpon>DeleteRoles.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admins\Roles\DeleteRoles.aspx.designer.cs">
+      <DependentUpon>DeleteRoles.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admins\Roles\EditRoles.aspx.cs">
+      <DependentUpon>EditRoles.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admins\Roles\EditRoles.aspx.designer.cs">
+      <DependentUpon>EditRoles.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admins\Roles\RolesList.aspx.cs">
+      <DependentUpon>RolesList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admins\Roles\RolesList.aspx.designer.cs">
+      <DependentUpon>RolesList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admins\SystemMenu\SystemMenuList.aspx.cs">
+      <DependentUpon>SystemMenuList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admins\SystemMenu\SystemMenuList.aspx.designer.cs">
+      <DependentUpon>SystemMenuList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admins\Tools\UploadImages.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admins\Users\AddUsers.aspx.cs">
+      <DependentUpon>AddUsers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admins\Users\AddUsers.aspx.designer.cs">
+      <DependentUpon>AddUsers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admins\Users\DeleteUsers.aspx.cs">
+      <DependentUpon>DeleteUsers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admins\Users\DeleteUsers.aspx.designer.cs">
+      <DependentUpon>DeleteUsers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admins\Users\EditUsers.aspx.cs">
+      <DependentUpon>EditUsers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admins\Users\EditUsers.aspx.designer.cs">
+      <DependentUpon>EditUsers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admins\Users\UsersList.aspx.cs">
+      <DependentUpon>UsersList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admins\Users\UsersList.aspx.designer.cs">
+      <DependentUpon>UsersList.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

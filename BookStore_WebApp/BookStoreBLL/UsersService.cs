@@ -36,6 +36,16 @@ namespace BookStore.BLL
             return dal.Delete(u);
         }
 
+        /// <summary>
+        /// 删除多个值的时候使用的
+        /// </summary>
+        /// <param name="idList">删除id的集合</param>
+        /// <returns>受影响行数</returns>
+        public int DeleteList(string idList)
+        {
+            return dal.DeleteList(idList);
+        }
+
         public List<Users> GetUsersList()
         {
             return dal.GetUsersList();
