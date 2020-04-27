@@ -7,28 +7,28 @@
 // </自动生成>
 //------------------------------------------------------------------------------
 
-namespace BookStore.WebApp.Admins.Users {
+namespace BookStore.WebApp.Admins.SystemMenu {
     
     
-    public partial class AddUsers {
+    public partial class AddSystemMenu {
         
         /// <summary>
-        /// formAddUsers 控件。
+        /// formAddSystemMenu 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm formAddUsers;
+        protected global::System.Web.UI.HtmlControls.HtmlForm formAddSystemMenu;
         
         /// <summary>
-        /// Email 控件。
+        /// MenuTitle 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Email;
+        protected global::System.Web.UI.WebControls.TextBox MenuTitle;
         
         /// <summary>
         /// RequiredFieldValidator1 控件。
@@ -40,13 +40,13 @@ namespace BookStore.WebApp.Admins.Users {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
         
         /// <summary>
-        /// Password 控件。
+        /// MenuLink 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Password;
+        protected global::System.Web.UI.WebControls.TextBox MenuLink;
         
         /// <summary>
         /// RequiredFieldValidator2 控件。
@@ -58,67 +58,31 @@ namespace BookStore.WebApp.Admins.Users {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator2;
         
         /// <summary>
-        /// RePassword 控件。
+        /// ddlLevel 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox RePassword;
+        protected global::System.Web.UI.WebControls.DropDownList ddlLevel;
         
         /// <summary>
-        /// RequiredFieldValidator3 控件。
+        /// ddlParentTitle 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator3;
+        protected global::System.Web.UI.WebControls.DropDownList ddlParentTitle;
         
         /// <summary>
-        /// CompareValidator1 控件。
+        /// ddlSonTitle 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CompareValidator CompareValidator1;
-        
-        /// <summary>
-        /// NickName 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox NickName;
-        
-        /// <summary>
-        /// RequiredFieldValidator4 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator4;
-        
-        /// <summary>
-        /// FileUpload1 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload FileUpload1;
-        
-        /// <summary>
-        /// RolesList 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList RolesList;
+        protected global::System.Web.UI.WebControls.DropDownList ddlSonTitle;
         
         /// <summary>
         /// btnSumbit 控件。

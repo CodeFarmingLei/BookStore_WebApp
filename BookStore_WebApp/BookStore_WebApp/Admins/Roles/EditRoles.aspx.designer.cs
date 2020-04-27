@@ -7,22 +7,20 @@
 // </自动生成>
 //------------------------------------------------------------------------------
 
-namespace BookStore.WebApp.Admins.Roles
-{
-
-
-    public partial class EditRoles
-    {
-
+namespace BookStore.WebApp.Admins.Roles {
+    
+    
+    public partial class EditRoles {
+        
         /// <summary>
-        /// form1 控件。
+        /// formEditRoles 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-
+        protected global::System.Web.UI.HtmlControls.HtmlForm formEditRoles;
+        
         /// <summary>
         /// RolesId 控件。
         /// </summary>
@@ -31,7 +29,7 @@ namespace BookStore.WebApp.Admins.Roles
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox RolesId;
-
+        
         /// <summary>
         /// RolesTitle 控件。
         /// </summary>
@@ -40,7 +38,7 @@ namespace BookStore.WebApp.Admins.Roles
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox RolesTitle;
-
+        
         /// <summary>
         /// RequiredFieldValidator1 控件。
         /// </summary>
@@ -49,7 +47,7 @@ namespace BookStore.WebApp.Admins.Roles
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
-
+        
         /// <summary>
         /// btnSumbit 控件。
         /// </summary>

@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>用户管理界面</title>
+    <title>UsersList ---- 用户管理页面</title>
     <link href="../css/style.css" rel="stylesheet" type="text/css" />
     <script src="../js/jquery.js" type="text/javascript"></script>
     <script type="text/javascript">
@@ -23,7 +23,7 @@
     </script>
 </head>
 <body>
-    <form id="form1" runat="server">
+    <form id="formUsersList" runat="server">
         <div class="place">
         <span>位置：</span>
         <ul class="placeul">
@@ -34,18 +34,15 @@
     <div class="rightinfo">
         <div class="tools">
             <div class="ss_kuang">
-                <p>
-                    查找：</p>
+                <p>查找：</p>
                 <asp:TextBox ID="txtKeyWords" runat="server" class="ss_wk"></asp:TextBox>
                 <div class="ss_tu">
-                    <asp:ImageButton ID="ibtnGetSubmit" runat="server" ImageUrl="../images/ico06.png"
-                        OnClick="ibtnGetSubmit_OnClick" />
+                    <asp:ImageButton ID="ibtnGetSubmit" runat="server" ImageUrl="../images/ico06.png" OnClick="ibtnGetSubmit_OnClick" />
                 </div>
             </div>
             <ul class="float">
                 <li class="click"><a href='AddUsers.aspx'>
-                    <asp:Image ID="imgAdd" runat="server" ImageUrl="../images/AddWZ.png" Width="100"
-                        Height="35"></asp:Image></a>
+                    <asp:Image ID="imgAdd" runat="server" ImageUrl="../images/AddWZ.png" Width="100" Height="35"></asp:Image></a>
                 </li>
                 <li style="float:left; padding-right:0px;">
                     <asp:ImageButton ID="ibtnDelAll" runat="server" ImageUrl="../images/DelWZ.png" Width="100" Height="35" OnClientClick="return confirm('确定执行删除选中操作？')" OnClick="ibtnDelAll_OnClick" />

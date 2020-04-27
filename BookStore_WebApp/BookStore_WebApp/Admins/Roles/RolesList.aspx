@@ -1,17 +1,12 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="RolesList.aspx.cs" Inherits="BookStore.WebApp.Admins.Roles.RolesList" %>
 <%@ Register Assembly="AspNetPager" Namespace="Wuqi.Webdiyer" TagPrefix="webdiyer" %>
-<%--
-    Register 它实现的是注册功能,注册的是我们额外导入的控件,自定义控件
-    Assembly 反射,找到我们分页插件dll文件所在位置 
-    Namespace 命名空间,指的是我们分页插件它在编写的时候所用的命名空间
-    TagPrefix 当前页面内想要使用分页插件时所使用的服务器标签名称是
-    --%>
+
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>角色管理</title>
+    <title>RolesList ---- 角色管理页面</title>
     <link href="../css/style.css" rel="stylesheet" type="text/css" />
     <script src="../js/jquery.js" type="text/javascript"></script>
     <script type="text/javascript">
@@ -26,58 +21,43 @@
                 }
             }
         }
- 
     </script>
 </head>
 <body>
-     <form id="form1" runat="server">
+    <form id="formRolesList" runat="server">
     <div class="place">
         <span>位置：</span>
         <ul class="placeul">
             <li><a href="../main/Main.aspx">首页</a></li>
             <li><a href="RolesList.aspx">角色管理</a></li>
         </ul>
-    </div>
-    <div class="rightinfo">
-        <div class="tools">
-            <div class="ss_kuang">
-                <p>
-                    查找：</p>
-                <asp:TextBox ID="txtKeyWords" runat="server" class="ss_wk"></asp:TextBox>
-                <div class="ss_tu">
-                    <asp:ImageButton ID="ibtnGetSubmit" runat="server" ImageUrl="../images/ico06.png"
-                        OnClick="ibtnGetSubmit_OnClick" />
+     </div>
+     <div class="rightinfo">
+         <div class="tools">
+             <div class="ss_kuang">
+                 <p>查找：</p>
+                 <asp:TextBox ID="txtKeyWords" runat="server" class="ss_wk"></asp:TextBox>
+                 <div class="ss_tu">
+                    <asp:ImageButton ID="ibtnGetSubmit" runat="server" ImageUrl="../images/ico06.png" OnClick="ibtnGetSubmit_OnClick" />
                 </div>
             </div>
             <ul class="float">
                 <li class="click"><a href='AddRoles.aspx'>
-                    <asp:Image ID="imgAdd" runat="server" ImageUrl="../images/AddWZ.png" Width="100"
-                        Height="35"></asp:Image></a>
+                    <asp:Image ID="imgAdd" runat="server" ImageUrl="../images/AddWZ.png" Width="100" Height="35"></asp:Image></a>
                 </li>
                 <li style="float:left; padding-right:0px;">
-                    <asp:ImageButton ID="ibtnDelAll" runat="server" ImageUrl="../images/DelWZ.png" Width="100"
-                        Height="35" OnClientClick="return confirm('确定执行删除选中操作？')" OnClick="ibtnDelAll_OnClick" />
+                    <asp:ImageButton ID="ibtnDelAll" runat="server" ImageUrl="../images/DelWZ.png" Width="100" Height="35" OnClientClick="return confirm('确定执行删除选中操作？')" OnClick="ibtnDelAll_OnClick" />
                 </li>
             </ul>
         </div>
         <table class="tablelist">
             <thead>
                 <tr>
-                    <th>
-                        <asp:CheckBox ID="chk_JS" runat="server" Text="" onclick="selectAll(this)" />
-                    </th>
-                    <th>
-                        编号
-                    </th>
-                    <th>
-                        角色名
-                    </th>
-                    <th>
-                        修改
-                    </th>
-                    <th>
-                        删除
-                    </th>
+                    <th><asp:CheckBox ID="chk_JS" runat="server" Text="" onclick="selectAll(this)" /></th>
+                    <th>编号</th>
+                    <th>角色名</th>
+                    <th>修改</th>
+                    <th>删除</th>
                 </tr>
             </thead>
             <tbody>
@@ -97,13 +77,11 @@
                        
                             <td width="5%">
                                 <a href='EditRoles.aspx?action=<%#Eval("Id") %>'>
-                                    <asp:Image ID="imgedit" runat="server" ImageUrl="../images/t02.png" Width="20" Height="20">
-                                    </asp:Image></a>
+                                    <asp:Image ID="imgedit" runat="server" ImageUrl="../images/t02.png" Width="20" Height="20"></asp:Image></a>
                             </td>
                             <td width="5%">
                                 <a href='DeleteRoles.aspx?action=<%#Eval("Id") %>'>
-                                    <asp:Image ID="imgdel" runat="server" ImageUrl="../images/t03.png" Width="20" Height="20">
-                                    </asp:Image></a>
+                                    <asp:Image ID="imgdel" runat="server" ImageUrl="../images/t03.png" Width="20" Height="20"></asp:Image></a>
                             </td>
                         </tr>
                     </ItemTemplate>

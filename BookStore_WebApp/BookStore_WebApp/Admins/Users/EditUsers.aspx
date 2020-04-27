@@ -5,11 +5,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>新增角色信息</title>
+    <title>EditUsers ---- 编辑用户信息</title>
     <link href="../css/style.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-    <form id="form1" runat="server">
+    <form id="formEditUsers" runat="server">
         <div class="place">
             <span>位置：</span>
             <ul class="placeul">
@@ -70,11 +70,6 @@
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="权限编号不能为空" ControlToValidate="UsersRolesId" Display="Dynamic"></asp:RequiredFieldValidator>
                     </i>
                 </li>
-                <!-- 
-                    验证标签我们需要给他加上属性
-                    1.ControlToValidate = "要验证的控件id" 提示给哪个控件做的验证 
-                    2.Display="Dynamic"    用于怎么显示  Dynamic 动态    
-                -->
                 <li>
                     <label>&nbsp;</label>
                     <asp:Button ID="btnSumbit" runat="server" Text="确认保存" CssClass="btn" OnClick="btnSumbit_Click" />

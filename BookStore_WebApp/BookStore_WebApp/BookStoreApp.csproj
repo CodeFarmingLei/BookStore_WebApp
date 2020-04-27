@@ -274,6 +274,9 @@
     <Content Include="Admins\Roles\EditRoles.aspx" />
     <Content Include="Admins\Roles\RolesList.aspx" />
     <Content Include="Admins\src\jquery.gvChart-1.0.1.js" />
+    <Content Include="Admins\SystemMenu\AddSystemMenu.aspx" />
+    <Content Include="Admins\SystemMenu\DeleteSystemMenu.aspx" />
+    <Content Include="Admins\SystemMenu\EditSystemMenu.aspx" />
     <Content Include="Admins\SystemMenu\SystemMenuList.aspx" />
     <Content Include="Admins\Users\AddUsers.aspx" />
     <Content Include="Admins\Users\DeleteUsers.aspx" />
@@ -347,6 +350,27 @@
     </Compile>
     <Compile Include="Admins\Roles\RolesList.aspx.designer.cs">
       <DependentUpon>RolesList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admins\SystemMenu\AddSystemMenu.aspx.cs">
+      <DependentUpon>AddSystemMenu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admins\SystemMenu\AddSystemMenu.aspx.designer.cs">
+      <DependentUpon>AddSystemMenu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admins\SystemMenu\DeleteSystemMenu.aspx.cs">
+      <DependentUpon>DeleteSystemMenu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admins\SystemMenu\DeleteSystemMenu.aspx.designer.cs">
+      <DependentUpon>DeleteSystemMenu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admins\SystemMenu\EditSystemMenu.aspx.cs">
+      <DependentUpon>EditSystemMenu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admins\SystemMenu\EditSystemMenu.aspx.designer.cs">
+      <DependentUpon>EditSystemMenu.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admins\SystemMenu\SystemMenuList.aspx.cs">
       <DependentUpon>SystemMenuList.aspx</DependentUpon>

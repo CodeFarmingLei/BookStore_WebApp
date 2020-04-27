@@ -36,10 +36,9 @@ namespace BookStore.WebApp.Admins.Roles
         /// <param name="e"></param>
         protected void AspNetPager1_PageChanging(object src, PageChangingEventArgs e)
         {
-            AspNetPager1.CurrentPageIndex = e.NewPageIndex;//这个是我们重新设定分页展示的当前页码为多少
+            AspNetPager1.CurrentPageIndex = e.NewPageIndex; //重新设定分页展示的当前页码为多少
             /*
-             *当我们以后如果有点击下一页的时候文本框当中的值,刷新,消失了的时候,我们需要在这给文本框重新赋值,赋的是之前输入
-             *的内容
+             *当我们以后如果有点击下一页的时候文本框当中的值,刷新,消失了的时候,我们需要在这给文本框重新赋值,赋的是之前输入的内容
              *this.txtKeyWords.Text = XXXX;
              */
             //下面的是绑定数据源
@@ -71,7 +70,6 @@ namespace BookStore.WebApp.Admins.Roles
             AspNetPager1.RecordCount = dt.Count; //给分页插件设定数据的总条数
             this.RepRolesList.DataSource = psd; //给Repeater控件传入数据源,这个数据源是我们自己设定的分页的数据源
             this.RepRolesList.DataBind(); //实现Repeater数据绑定
-
         }
     }
 }

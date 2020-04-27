@@ -47,7 +47,7 @@ namespace BookStore.DAL
 
         public List<SystemMenu> GetSystemMenusList()
         {
-            string sql = "select Id,Title,Link, ParentId from SystemMenu";
+            string sql = "select * from SystemMenu";
             var dt = SqlHelper.Query(sql, null);
             var list = new List<SystemMenu>();
             foreach (DataRow dr in dt.Rows)
@@ -62,12 +62,19 @@ namespace BookStore.DAL
 
         public List<SystemMenu> GetSystemMenusListByTitle(string title)
         {
-            string sql = $"select Id,Title,Link, ParentId from SystemMenu where Title like '%{title}%'";
+            string sql = "select * from SystemMenu where Title like '%"+title+"%'";
             var dt = SqlHelper.Query(sql, null);
             var list = new List<SystemMenu>();
             foreach (DataRow dr in dt.Rows)
             {
-                var item = FileData(dr);
+                var item = new SystemMenu()
+                {
+                    Id = int.Parse(dr["Id"].ToString()),
+                    Title = dr["Title"].ToString(),
+                    Link = dr["Link"].ToString(),
+                    ParentId = int.Parse(dr["ParentId"].ToString())
+                };
+
                 list.Add(item);
             }
 
@@ -76,7 +83,7 @@ namespace BookStore.DAL
 
         public List<SystemMenu> GetSystemMenusListByParentId(int parentId = 0)
         {
-            string sql = "select Id,Title,Link, ParentId from SystemMenu where ParentId = @ParentId";
+            string sql = "select * from SystemMenu where ParentId = @ParentId";
             SqlParameter[] param =
             {
                 new SqlParameter("@ParentId",parentId) 
@@ -95,7 +102,7 @@ namespace BookStore.DAL
 
         public SystemMenu GetSystemMenuById(int id)
         {
-            string sql = "select Id,Title,Link,ParentId where Id = @Id";
+            string sql = "select * from SystemMenu where Id = @Id";
             SqlParameter[] param =
             {
                 new SqlParameter("@Id",id) 

@@ -5,10 +5,10 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
+    <title>DeleteUsers ---- 删除用户信息</title>
 </head>
 <body>
-    <form id="form1" runat="server">
+    <form id="formDeleteUsers" runat="server">
         <div>
         </div>
     </form>
