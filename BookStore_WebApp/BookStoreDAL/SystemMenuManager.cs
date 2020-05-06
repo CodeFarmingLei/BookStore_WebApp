@@ -128,5 +128,29 @@ namespace BookStore.DAL
             };
         }
 
+        /// <summary>
+        /// 查询不在id列表当中所有内容
+        /// </summary>
+        /// <param name="idList">id列表</param>
+        /// <returns></returns>
+        public List<SystemMenu> GetMenusListNoOwn(string idList)
+        {
+            string sql = "select * from SystemMenu";
+            if (idList != "")
+            {
+                sql += " where id not in(" + idList + ")";
+            }
+
+            var dt = SqlHelper.Query(sql, null);
+            var list = new List<SystemMenu>();
+            foreach (DataRow dr in dt.Rows)
+            {
+                var model = FileData(dr);
+                list.Add(model);
+            }
+
+            return list;
+        }
+
     }
 }

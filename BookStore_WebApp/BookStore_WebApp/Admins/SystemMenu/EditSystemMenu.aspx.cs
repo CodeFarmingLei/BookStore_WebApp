@@ -16,52 +16,58 @@ namespace BookStore.WebApp.Admins.SystemMenu
         {
             if (IsPostBack)
                 return;
-            ParentTitleBind();
-            //下面我们开始做页面内容绑定
-            int id = Request.Params["action"] == null ? 0 : int.Parse(Request.Params["action"]);
-
-            var model = menuSvc.GetSystemMenuById(id);
-            if (model == null)
+            HttpCookie u_cookie = Request.Cookies["LoginOk"];
+            HttpCookie r_cookie = Request.Cookies["RolesId"];
+            if ((Session["LoginOk"] == null || Session["RolesId"] == null) && (u_cookie == null || r_cookie == null))
             {
-                Response.Write("<script>alert('查询的对象不存在');location.href='SystemMenuList.aspx'</script>");
+                Response.Write("<script>alert('账号信息过期,请重新登入');location.href='../Login.aspx'</script>");
             }
             else
             {
-                this.MenuId.Text = model.Id.ToString();
-                this.MenuTitle.Text = model.Title;
-                this.MenuLink.Text = model.Link;
-                //下拉列表怎么做啊
-                if (model.ParentId == 0) //这种情况是一级菜单
+                ParentTitleBind();
+                //下面我们开始做页面内容绑定
+                int id = Request.Params["action"] == null ? 0 : int.Parse(Request.Params["action"]);
+
+                var model = menuSvc.GetSystemMenuById(id);
+                if (model == null)
                 {
-                    this.ddlLevel.SelectedIndex = 0;
-                    this.ddlParentTitle.Visible = false;
-                    this.ddlSonTitle.Visible = false;
+                    Response.Write("<script>alert('查询的对象不存在');location.href='SystemMenuList.aspx'</script>");
                 }
-                else //这个里面指定的是不是一级菜单的情况
+                else
                 {
-                    var parent = menuSvc.GetSystemMenuById(model.ParentId);
-                    if (parent.ParentId == 0) //这种情况是指二级菜单
+                    this.MenuId.Text = model.Id.ToString();
+                    this.MenuTitle.Text = model.Title;
+                    this.MenuLink.Text = model.Link;
+                    //下拉列表怎么做啊
+                    if (model.ParentId == 0) //这种情况是一级菜单
                     {
-                        this.ddlLevel.SelectedIndex = 1;
-                        this.ddlParentTitle.Visible = true;
-                        this.ddlParentTitle.SelectedValue = parent.Id.ToString();
+                        this.ddlLevel.SelectedIndex = 0;
+                        this.ddlParentTitle.Visible = false;
                         this.ddlSonTitle.Visible = false;
                     }
-                    else //这种情况指三级菜单
+                    else //这个里面指定的是不是一级菜单的情况
                     {
-                        this.ddlLevel.SelectedIndex = 2;
-                        this.ddlParentTitle.Visible = true;
-                        this.ddlSonTitle.Visible = true;
-                        this.ddlParentTitle.SelectedValue = parent.ParentId.ToString();
-
-                        SonTitleBind(parent.ParentId);
-
-                        this.ddlSonTitle.SelectedValue = parent.Id.ToString();
-
+                        var parent = menuSvc.GetSystemMenuById(model.ParentId);
+                        if (parent.ParentId == 0) //这种情况是指二级菜单
+                        {
+                            this.ddlLevel.SelectedIndex = 1;
+                            this.ddlParentTitle.Visible = true;
+                            this.ddlParentTitle.SelectedValue = parent.Id.ToString();
+                            this.ddlSonTitle.Visible = false;
+                        }
+                        else //这种情况指三级菜单
+                        {
+                            this.ddlLevel.SelectedIndex = 2;
+                            this.ddlParentTitle.Visible = true;
+                            this.ddlSonTitle.Visible = true;
+                            this.ddlParentTitle.SelectedValue = parent.ParentId.ToString();
+                            SonTitleBind(parent.ParentId);
+                            this.ddlSonTitle.SelectedValue = parent.Id.ToString();
+                        }
                     }
                 }
-
             }
+                
         }
 
         /// <summary>

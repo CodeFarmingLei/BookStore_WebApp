@@ -18,14 +18,23 @@ namespace BookStore.WebApp.Admins.Roles
             if (IsPostBack)
                 return;
 
-            #region Repeater绑定
+            HttpCookie u_cookie = Request.Cookies["LoginOk"];
+            HttpCookie r_cookie = Request.Cookies["RolesId"];
+            if ((Session["LoginOk"] == null || Session["RolesId"] == null) && (u_cookie == null || r_cookie == null))
+            {
+                Response.Write("<script>alert('账号信息过期,请重新登入');location.href='../Login.aspx'</script>");
+            }
+            else
+            {
+                #region Repeater绑定
 
-            //this.RepRolesList.DataSource = bll.GetRolesList(); //查询所有的权限信息,并且把这个集合添加到Repeater控件当中
-            //this.RepRolesList.DataBind();  //绑定数据源
+                //this.RepRolesList.DataSource = bll.GetRolesList(); //查询所有的权限信息,并且把这个集合添加到Repeater控件当中
+                //this.RepRolesList.DataBind();  //绑定数据源
 
-            GetRoles("");
+                GetRoles("");
 
-            #endregion
+                #endregion
+            }
 
         }
 

@@ -278,6 +278,7 @@
     <Content Include="Admins\SystemMenu\DeleteSystemMenu.aspx" />
     <Content Include="Admins\SystemMenu\EditSystemMenu.aspx" />
     <Content Include="Admins\SystemMenu\SystemMenuList.aspx" />
+    <Content Include="Admins\UsersPermission\UsersPermissionList.aspx" />
     <Content Include="Admins\Users\AddUsers.aspx" />
     <Content Include="Admins\Users\DeleteUsers.aspx" />
     <Content Include="Admins\Users\EditUsers.aspx" />
@@ -381,6 +382,13 @@
     </Compile>
     <Compile Include="Admins\Tools\UploadImages.cs">
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admins\UsersPermission\UsersPermissionList.aspx.cs">
+      <DependentUpon>UsersPermissionList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admins\UsersPermission\UsersPermissionList.aspx.designer.cs">
+      <DependentUpon>UsersPermissionList.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admins\Users\AddUsers.aspx.cs">
       <DependentUpon>AddUsers.aspx</DependentUpon>

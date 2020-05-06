@@ -17,29 +17,37 @@ namespace BookStore_WebApp.Admins.Users
         {
             if (IsPostBack)
                 return;
-
-            //获取ID值
-            var id = Request.Params["action"];
-            if (id == null)
+            HttpCookie u_cookie = Request.Cookies["LoginOk"];
+            HttpCookie r_cookie = Request.Cookies["RolesId"];
+            if ((Session["LoginOk"] == null || Session["RolesId"] == null) && (u_cookie == null || r_cookie == null))
             {
-                Response.Write("<script>alert('传输数据丢失,请稍后再试');location.href='UsersList.aspx'</script>");
+                Response.Write("<script>alert('账号信息过期,请重新登入');location.href='../Login.aspx'</script>");
             }
             else
             {
-                var users = bll.GetUsersById(int.Parse(id));
-                if (users == null)
+                //获取ID值
+                var id = Request.Params["action"];
+                if (id == null)
                 {
-                    Response.Write("<script>alert('该角色信息不存在');location.href='UsersList.aspx'</script>");
+                    Response.Write("<script>alert('传输数据丢失,请稍后再试');location.href='UsersList.aspx'</script>");
                 }
                 else
                 {
-                    this.UsersId.Text = users.Id.ToString();
-                    this.UsersEmail.Text = users.Email;
-                    this.UsersPwd.Text = users.Password;
-                    this.UsersNikeName.Text = users.NickName;
-                    this.UsersPhoto.Text = users.Photo;
-                    this.UsersCreateTime.Text = users.CreateTime.ToString();
-                    this.UsersRolesId.Text = users.RolesId.ToString();
+                    var users = bll.GetUsersById(int.Parse(id));
+                    if (users == null)
+                    {
+                        Response.Write("<script>alert('该角色信息不存在');location.href='UsersList.aspx'</script>");
+                    }
+                    else
+                    {
+                        this.UsersId.Text = users.Id.ToString();
+                        this.UsersEmail.Text = users.Email;
+                        this.UsersPwd.Text = users.Password;
+                        this.UsersNikeName.Text = users.NickName;
+                        this.UsersPhoto.Text = users.Photo;
+                        this.UsersCreateTime.Text = users.CreateTime.ToString();
+                        this.UsersRolesId.Text = users.RolesId.ToString();
+                    }
                 }
             }
 

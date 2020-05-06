@@ -15,25 +15,34 @@ namespace BookStore.WebApp.Admins.Roles
         {
             if(IsPostBack)
                 return;
-            //修改要做的 :
-            //1. 页面绑定
-            // (1) 先去获取到我们从连接当中传递过来的id值
-            var id = Request.Params["action"];
-            if (id == null)
+            HttpCookie u_cookie = Request.Cookies["LoginOk"];
+            HttpCookie r_cookie = Request.Cookies["RolesId"];
+            if ((Session["LoginOk"] == null || Session["RolesId"] == null) && (u_cookie == null || r_cookie == null))
             {
-                Response.Write("<script>alert('传输数据丢失,请稍后再试');location.href='RolesList.aspx'</script>");
+                Response.Write("<script>alert('账号信息过期,请重新登入');location.href='../Login.aspx'</script>");
             }
             else
             {
-                var roles = bll.GetRoles(int.Parse(id));
-                if (roles == null)
+                //修改要做的 :
+                //1. 页面绑定
+                // (1) 先去获取到我们从连接当中传递过来的id值
+                var id = Request.Params["action"];
+                if (id == null)
                 {
-                    Response.Write("<script>alert('该角色信息不存在');location.href='RolesList.aspx'</script>");
+                    Response.Write("<script>alert('传输数据丢失,请稍后再试');location.href='RolesList.aspx'</script>");
                 }
                 else
                 {
-                    this.RolesId.Text = roles.Id.ToString();
-                    this.RolesTitle.Text = roles.Title;
+                    var roles = bll.GetRoles(int.Parse(id));
+                    if (roles == null)
+                    {
+                        Response.Write("<script>alert('该角色信息不存在');location.href='RolesList.aspx'</script>");
+                    }
+                    else
+                    {
+                        this.RolesId.Text = roles.Id.ToString();
+                        this.RolesTitle.Text = roles.Title;
+                    }
                 }
             }
 

@@ -44,5 +44,15 @@ namespace BookStore.BLL
         {
             return dal.GetSystemMenuById(id);
         }
+
+        /// <summary>
+        /// 查询不在id列表当中所有内容
+        /// </summary>
+        /// <param name="idList">id列表</param>
+        /// <returns></returns>
+        public List<SystemMenu> GetMenusListNoOwn(string idList)
+        {
+            return dal.GetMenusListNoOwn(idList);
+        }
     }
 }

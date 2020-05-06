@@ -31,5 +31,10 @@ namespace BookStore.BLL
             return dal.GetUsersPermissionsByRolesId(rid);
         }
 
+        public int DeleteList(string idList)
+        {
+            return dal.DeleteList(idList);
+        }
+
     }
 }

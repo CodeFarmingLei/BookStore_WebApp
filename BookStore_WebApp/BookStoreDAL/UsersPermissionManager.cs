@@ -43,6 +43,13 @@ namespace BookStore.DAL
 
         }
 
+        public int DeleteList(string idList) 
+        {
+            string sql = "delete from UsersPermission where id in(" + idList + ")";
+            return SqlHelper.ExecuteNonQuery(sql, null);
+        }
+
+
         public List<UsersPermission> GetUsersPermissionsByRolesId(int rid)
         {
             string sql = "select Id,RolesId,SystemMenuId from UsersPermission where RolesId = @RolesId";
