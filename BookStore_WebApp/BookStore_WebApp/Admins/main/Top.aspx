@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>无标题文档</title>
+    <title>顶部菜单</title>
     <link href="../css/style.css" rel="stylesheet" type="text/css" />
     <script language="JavaScript" src="../js/jquery.js"></script>
     <script type="text/javascript">
@@ -41,7 +41,7 @@
             </ul>
      
             <div class="user">
-                <span>admin</span>
+                <span><%=NickName %></span>
                 <i>消息</i>
                 <b>5</b>
             </div>    

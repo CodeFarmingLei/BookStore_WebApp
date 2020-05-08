@@ -283,6 +283,7 @@
     <Content Include="Admins\Users\DeleteUsers.aspx" />
     <Content Include="Admins\Users\EditUsers.aspx" />
     <Content Include="Admins\Users\UsersList.aspx" />
+    <Content Include="Admins\Copyright\EditCopyright.aspx" />
     <Content Include="Global.asax" />
     <Content Include="index.aspx" />
     <Content Include="upload\users\codelei.jpg" />
@@ -417,6 +418,13 @@
     </Compile>
     <Compile Include="Admins\Users\UsersList.aspx.designer.cs">
       <DependentUpon>UsersList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admins\Copyright\EditCopyright.aspx.cs">
+      <DependentUpon>EditCopyright.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admins\Copyright\EditCopyright.aspx.designer.cs">
+      <DependentUpon>EditCopyright.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

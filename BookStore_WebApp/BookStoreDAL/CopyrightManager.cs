@@ -60,10 +60,14 @@ namespace BookStore.DAL
 
 
 
-        public Copyright GetCopyright()
+        public Copyright GetCopyright(int id)
         {
-            string sql = "select top 1 * from Copyright";
-            var dt = SqlHelper.Query(sql, null);
+            string sql = "select  * from Copyright where Id = @Id";
+            SqlParameter[] param =
+            {
+                new SqlParameter("@Id",id)
+            };
+            var dt = SqlHelper.Query(sql, param);
             
             if (dt.Rows.Count > 0)
             {

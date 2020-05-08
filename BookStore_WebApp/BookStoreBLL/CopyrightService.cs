@@ -26,9 +26,9 @@ namespace BookStore.BLL
 
 
 
-        public Copyright GetCopyright()
+        public Copyright GetCopyright(int id)
         {
-            return dal.GetCopyright();
+            return dal.GetCopyright(id);
 
         }
 

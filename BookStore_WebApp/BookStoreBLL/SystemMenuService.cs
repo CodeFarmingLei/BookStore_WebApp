@@ -54,5 +54,10 @@ namespace BookStore.BLL
         {
             return dal.GetMenusListNoOwn(idList);
         }
+
+        public List<SystemMenu> GetMenusListOwn(string idList)
+        {
+            return dal.GetMenusListOwn(idList);
+        }
     }
 }

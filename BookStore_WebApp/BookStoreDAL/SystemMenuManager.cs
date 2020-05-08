@@ -152,5 +152,25 @@ namespace BookStore.DAL
             return list;
         }
 
+
+        public List<SystemMenu> GetMenusListOwn(string idList) 
+        {
+            string sql = "select * from SystemMenu";
+            if (idList != "")
+            {
+                sql += " where id  in(" + idList + ")";
+            }
+
+            var dt = SqlHelper.Query(sql, null);
+            var list = new List<SystemMenu>();
+            foreach (DataRow dr in dt.Rows)
+            {
+                var model = FileData(dr);
+                list.Add(model);
+            }
+
+            return list;
+        }
+
     }
 }
