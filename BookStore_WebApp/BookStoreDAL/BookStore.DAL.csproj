@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AboutManager.cs" />
     <Compile Include="WebMenuManager.cs" />
     <Compile Include="UsersPermissionManager.cs" />
     <Compile Include="UsersManager.cs" />

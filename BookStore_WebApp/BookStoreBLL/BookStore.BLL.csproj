@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AboutService.cs" />
     <Compile Include="WebMenuService.cs" />
     <Compile Include="UsersPermissionService.cs" />
     <Compile Include="UsersService.cs" />

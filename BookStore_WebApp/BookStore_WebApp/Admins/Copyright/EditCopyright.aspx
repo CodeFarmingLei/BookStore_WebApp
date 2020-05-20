@@ -5,11 +5,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>编辑版权信息</title>
+    <title>EditCopyright ---- 编辑版权信息</title>
      <link href="../css/style.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-    <form id="form1" runat="server">
+    <form id="formEditCopyright" runat="server">
        <div class="place">
             <span>位置：</span>
             <ul class="placeul">
@@ -43,7 +43,7 @@
                 </li>
                 <li>
                     <label>公司地址:</label>
-                    <asp:TextBox ID="txtAddress" runat="server" TextMode="Password" CssClass="dfinput"></asp:TextBox>
+                    <asp:TextBox ID="txtAddress" runat="server"  CssClass="dfinput"></asp:TextBox>
                     <i>
                         
                     </i>
