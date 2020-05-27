@@ -43,5 +43,10 @@ namespace BookStore.BLL
         {
             return dal.GetWebMenuById(id);
         }
+
+        public List<WebMenu> GetMenusByIsShow(int isShow)
+        {
+            return dal.GetMenusByIsShow(isShow);
+        }
     }
 }

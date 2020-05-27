@@ -285,6 +285,10 @@
     <Content Include="Admins\Users\EditUsers.aspx" />
     <Content Include="Admins\Users\UsersList.aspx" />
     <Content Include="Admins\Copyright\EditCopyright.aspx" />
+    <Content Include="Admins\WebMenu\AddWebMenu.aspx" />
+    <Content Include="Admins\WebMenu\DeleteWebMenu.aspx" />
+    <Content Include="Admins\WebMenu\EditWebMenu.aspx" />
+    <Content Include="Admins\WebMenu\WebMenuList.aspx" />
     <Content Include="Global.asax" />
     <Content Include="index.aspx" />
     <Content Include="kindeditor\attached\image\20130111\20130111170504_8743.png" />
@@ -490,6 +494,52 @@
     <Content Include="kindeditor\themes\simple\simple.css" />
     <Content Include="upload\users\codelei.jpg" />
     <Content Include="Web.config" />
+    <Content Include="Web\css1\style.css" />
+    <Content Include="Web\images\banner.jpg" />
+    <Content Include="Web\images\banner_1.png" />
+    <Content Include="Web\images\banner_2.png" />
+    <Content Include="Web\images\banner_3.png" />
+    <Content Include="Web\images\banner_4.png" />
+    <Content Include="Web\images\banner_5.png" />
+    <Content Include="Web\images\div.png" />
+    <Content Include="Web\images\dt.jpg" />
+    <Content Include="Web\images\fotter41.png" />
+    <Content Include="Web\images\fotter51.png" />
+    <Content Include="Web\images\fotter52.png" />
+    <Content Include="Web\images\fotter_21.png" />
+    <Content Include="Web\images\index_11.png" />
+    <Content Include="Web\images\index_12.png" />
+    <Content Include="Web\images\index_13.png" />
+    <Content Include="Web\images\index_21.png" />
+    <Content Include="Web\images\index_22.png" />
+    <Content Include="Web\images\index_3.png" />
+    <Content Include="Web\images\index_3_nran.png" />
+    <Content Include="Web\images\index_4.png" />
+    <Content Include="Web\images\index_5.png" />
+    <Content Include="Web\images\index_6.png" />
+    <Content Include="Web\images\logo.jpg" />
+    <Content Include="Web\images\xydk1.png" />
+    <Content Include="Web\images\xydk21.png" />
+    <Content Include="Web\images\xydk3.png" />
+    <Content Include="Web\images\xydk41.png" />
+    <Content Include="Web\images\xydk42.png" />
+    <Content Include="Web\images\xydk43.png" />
+    <Content Include="Web\images\xydk44.png" />
+    <Content Include="Web\images\xydk45.png" />
+    <Content Include="Web\images\xydk46.png" />
+    <Content Include="Web\images\xydk47.png" />
+    <Content Include="Web\images\xydk48.png" />
+    <Content Include="Web\images\xydk4_11.png" />
+    <Content Include="Web\images\xydk4_12.png" />
+    <Content Include="Web\images\xydk4_13.png" />
+    <Content Include="Web\images\xydk4_14.png" />
+    <Content Include="Web\images\xydk5_1.png" />
+    <Content Include="Web\images\xydk5_l.png" />
+    <Content Include="Web\images\xydk6.png" />
+    <Content Include="Web\index.aspx" />
+    <Content Include="Web\js1\jquery-1.9.1.js" />
+    <Content Include="Web\js1\rollinginthedeep.js" />
+    <Content Include="Web\js1\zzsc.js" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Admins\About\EditAbout.aspx.cs">
@@ -635,6 +685,34 @@
     <Compile Include="Admins\Copyright\EditCopyright.aspx.designer.cs">
       <DependentUpon>EditCopyright.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admins\WebMenu\AddWebMenu.aspx.cs">
+      <DependentUpon>AddWebMenu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admins\WebMenu\AddWebMenu.aspx.designer.cs">
+      <DependentUpon>AddWebMenu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admins\WebMenu\DeleteWebMenu.aspx.cs">
+      <DependentUpon>DeleteWebMenu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admins\WebMenu\DeleteWebMenu.aspx.designer.cs">
+      <DependentUpon>DeleteWebMenu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admins\WebMenu\EditWebMenu.aspx.cs">
+      <DependentUpon>EditWebMenu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admins\WebMenu\EditWebMenu.aspx.designer.cs">
+      <DependentUpon>EditWebMenu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admins\WebMenu\WebMenuList.aspx.cs">
+      <DependentUpon>WebMenuList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admins\WebMenu\WebMenuList.aspx.designer.cs">
+      <DependentUpon>WebMenuList.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -646,6 +724,20 @@
       <DependentUpon>index.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Web\FrontEnd.Master.cs">
+      <DependentUpon>FrontEnd.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Web\FrontEnd.Master.designer.cs">
+      <DependentUpon>FrontEnd.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Web\index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Web\index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="kindeditor\asp.net\file_manager_json.ashx" />
@@ -657,10 +749,13 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+    <Content Include="Web\FrontEnd.Master" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="kindeditor\asp.net\bin\" />
+    <Folder Include="Web\images1\" />
+    <Folder Include="Web\images\images\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BookStoreBLL\BookStore.BLL.csproj">

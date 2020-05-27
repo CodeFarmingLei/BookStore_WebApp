@@ -1,16 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace BookStore.Model
+﻿namespace BookStore.Model
 {
-    public class WebMenu //网站菜单表，前台界面的导航栏信息
+    public class WebMenu
     {
         public int Id { get; set; }
-        public string Title { get; set; }   //标题名称
-        public string Link { get; set; }    //链接地址
-        public int ParentId { get; set; }   //菜单等级
+        public string Title { get; set; }
+        public string Link { get; set; }
+        public int ParentId { get; set; }
+
+        public int IsShow { get; set; } //这个是用于设定是否在导航栏上进行显示的 0 false 1 true
     }
 }

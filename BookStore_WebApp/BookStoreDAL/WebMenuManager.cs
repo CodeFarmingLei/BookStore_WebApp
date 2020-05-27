@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using BookStore.Model;
@@ -9,12 +10,13 @@ namespace BookStore.DAL
     {
         public int Add(WebMenu m)
         {
-            string sql = "insert into WebMenu(Title,Link,ParentId) values(@Title,@Link,@ParentId)";
+            string sql = "insert into WebMenu(Title,Link,ParentId,IsShow) values(@Title,@Link,@ParentId,@IsShow)";
             SqlParameter[] param =
             {
                 new SqlParameter("@Title",m.Title),
                 new SqlParameter("@Link",m.Link),
-                new SqlParameter("@ParentId",m.ParentId)
+                new SqlParameter("@ParentId",m.ParentId),
+                new SqlParameter("@IsShow",m.IsShow)
             };
 
             return SqlHelper.ExecuteNonQuery(sql, param);
@@ -22,12 +24,13 @@ namespace BookStore.DAL
 
         public int Edit(WebMenu m)
         {
-            string sql = "update WebMenu set Title=@Title,Link=@Link,ParentId=@ParentId where Id=@Id";
+            string sql = "update WebMenu set Title=@Title,Link=@Link,ParentId=@ParentId,IsShow=@IsShow where Id=@Id";
             SqlParameter[] param =
             {
                 new SqlParameter("@Title",m.Title),
                 new SqlParameter("@Link",m.Link),
                 new SqlParameter("@ParentId",m.ParentId),
+                new SqlParameter("@IsShow",m.IsShow),
                 new SqlParameter("@Id",m.Id)
             };
 
@@ -47,7 +50,7 @@ namespace BookStore.DAL
 
         public List<WebMenu> GetWebMenusList()
         {
-            string sql = "select Id,Title,Link, ParentId from WebMenu";
+            string sql = "select * from WebMenu";
             var dt = SqlHelper.Query(sql, null);
             var list = new List<WebMenu>();
             foreach (DataRow dr in dt.Rows)
@@ -62,7 +65,7 @@ namespace BookStore.DAL
 
         public List<WebMenu> GetWebMenusListByTitle(string title)
         {
-            string sql = $"select Id,Title,Link, ParentId from WebMenu where Title like '%{title}%'";
+            string sql = "select * from WebMenu where Title like '%"+title+"%'";
             var dt = SqlHelper.Query(sql, null);
             var list = new List<WebMenu>();
             foreach (DataRow dr in dt.Rows)
@@ -76,7 +79,7 @@ namespace BookStore.DAL
 
         public List<WebMenu> GetWebMenusListByParentId(int parentId = 0)
         {
-            string sql = "select Id,Title,Link, ParentId from WebMenu where ParentId = @ParentId";
+            string sql = "select * from WebMenu where ParentId = @ParentId";
             SqlParameter[] param =
             {
                 new SqlParameter("@ParentId",parentId)
@@ -95,7 +98,7 @@ namespace BookStore.DAL
 
         public WebMenu GetWebMenuById(int id)
         {
-            string sql = "select Id,Title,Link,ParentId where Id = @Id";
+            string sql = "select * where Id = @Id";
             SqlParameter[] param =
             {
                 new SqlParameter("@Id",id)
@@ -108,6 +111,25 @@ namespace BookStore.DAL
             }
 
             return menu;
+        }
+
+
+        public List<WebMenu> GetMenusByIsShow(int isShow)
+        {
+            string sql = "select * from WebMenu where IsShow = @IsShow";
+            SqlParameter[] param =
+            {
+                new SqlParameter("@IsShow",isShow)
+            };
+            List<WebMenu> list = new List<WebMenu>();
+            var dt = SqlHelper.Query(sql, param);
+            foreach (DataRow item in dt.Rows)
+            {
+                var menu = FileData(item);
+                list.Add(menu);
+            }
+
+            return list;
         }
 
         public WebMenu FileData(DataRow dr)

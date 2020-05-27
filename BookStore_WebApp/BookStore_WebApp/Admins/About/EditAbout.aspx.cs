@@ -50,32 +50,31 @@ namespace BookStore.WebApp.Admins.About
         protected void btnSubmit_OnClick(object sender, EventArgs e)
         {
             int rs = 0;
-            if (this.txtId.Text == "0")
+
+            var data = aboutSvc.GetAboutById(int.Parse(this.txtId.Text));
+            if (data.Title == null)
             {
-                //这个我们要执行的是新增
+                //这种是我们执行新增
                 Model.About about = new Model.About()
                 {
                     Title = this.txtTitle.Text,
                     Content = this.txtContent.Value,
-                    Images = upload.UpFileName(FileUpload1,"../../upload/about/")
+                    Images = upload.UpFileName(FileUpload1,"../../upload/about")
                 };
-
-                 rs  = aboutSvc.Add(about);
+                rs = aboutSvc.Add(about);
             }
             else
             {
-                //这个我们要执行的是修改
-                var data = aboutSvc.GetAboutById(int.Parse(this.txtId.Text));
-
+                //执行修改
                 data.Title = this.txtTitle.Text;
                 data.Content = this.txtContent.Value;
-                var str = upload.UpFileName(FileUpload1, "../../upload/about/");
-                if (str != "")
-                    data.Images = str;
                 data.UpdateTime = DateTime.Now;
-
+                var imgSrc = upload.UpFileName(FileUpload1, "../../upload/about");
+                if (imgSrc != "")
+                    data.Images = imgSrc;
                 rs = aboutSvc.Edit(data);
             }
+
 
             if (rs > 0)
             {
