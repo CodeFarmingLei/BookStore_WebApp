@@ -72,6 +72,7 @@
   <ItemGroup>
     <Content Include="Admins\About\EditAbout.aspx" />
     <Content Include="Admins\Appointment\AppointmentList.aspx" />
+    <Content Include="Admins\Appointment\EditAppointment.aspx" />
     <Content Include="Admins\css\select.css" />
     <Content Include="Admins\css\style.css" />
     <Content Include="Admins\editor\kindeditor.js" />
@@ -557,6 +558,13 @@
     </Compile>
     <Compile Include="Admins\Appointment\AppointmentList.aspx.designer.cs">
       <DependentUpon>AppointmentList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admins\Appointment\EditAppointment.aspx.cs">
+      <DependentUpon>EditAppointment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admins\Appointment\EditAppointment.aspx.designer.cs">
+      <DependentUpon>EditAppointment.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admins\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>

@@ -39,6 +39,7 @@ namespace BookStore.DAL
             return SqlHelper.ExecuteNonQuery(sql,param);
         }
 
+        //当我们这边正在审核数据过多的时候,我们还需要根据创建时间来进行排序倒叙
 
         public List<Appointment> GetAll()
         {
@@ -49,7 +50,7 @@ namespace BookStore.DAL
 
         public List<Appointment> GetAllByRealName(string name)
         {
-            string sql = "select * from Appointment where RealName like '%"+name+"%' order by AuditId asc";
+            string sql = "select * from Appointment where RealName like '%"+name+"%' order by AuditId asc,CreateTime desc";
       
             var dt = SqlHelper.Query(sql, null);
             return FillData(dt);
@@ -107,6 +108,20 @@ namespace BookStore.DAL
             }
 
             return list;
+        }
+
+
+        public int GetCountByAuditId(int auditId)
+        {
+            string sql = "select count(*) from Appointment where AuditId = @AuditId";
+            SqlParameter[] param =
+            {
+                new SqlParameter("@AuditId",auditId) 
+            };
+
+            object ob = SqlHelper.ExecuteSaclar(sql, param);
+
+            return ob != null ? int.Parse(ob.ToString()) : 0;
         }
     }
 }

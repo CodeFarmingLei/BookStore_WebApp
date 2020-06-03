@@ -38,5 +38,10 @@ namespace BookStore.BLL
         {
             return dal.GetAllByAuditId(auditId);
         }
+
+        public int GetCountByAuditId(int auditId)
+        {
+            return dal.GetCountByAuditId(auditId);
+        }
     }
 }

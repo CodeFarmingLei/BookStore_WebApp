@@ -74,8 +74,7 @@
                         </th>
                         <th>修改
                         </th>
-                        <th>删除
-                        </th>
+                       
                     </tr>
                 </thead>
                 <tbody>
@@ -96,20 +95,17 @@
                                     <%# Eval("Telephone")%>
                                 </td>
                                 <td width="10%">
-                                    <%# Eval("Amount")%>
+                                    ¥<%# Eval("Amount")%>万元
                                 </td>
                                 <td width="10%">
                                     <%# getType(int.Parse(Eval("AuditId").ToString()))%>
                                 </td>
 
                                 <td width="5%">
-                                    <a href='EditRoles.aspx?action=<%#Eval("Id") %>'>
+                                    <a href='EditAppointment.aspx?action=<%#Eval("Id") %>'>
                                         <asp:Image ID="imgedit" runat="server" ImageUrl="../images/t02.png" Width="20" Height="20"></asp:Image></a>
                                 </td>
-                                <td width="5%">
-                                    <a href='DeleteRoles.aspx?action=<%#Eval("Id") %>'>
-                                        <asp:Image ID="imgdel" runat="server" ImageUrl="../images/t03.png" Width="20" Height="20"></asp:Image></a>
-                                </td>
+                      
                             </tr>
                         </ItemTemplate>
                     </asp:Repeater>

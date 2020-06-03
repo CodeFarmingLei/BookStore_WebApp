@@ -76,17 +76,16 @@
             url: "../Hanlder/AddAppointmentHandler.ashx",
             type: "post",
             data: { name: txtName, tel: txtTel, amount: txtAmount },
-            dataType: "json",
-            success: function (rs) {
+            dataType: "text",
+            success: function(rs) {
                 console.log(rs);
-                if (rs == true) {
+                if (rs == "True") {
                     alert('预约成功,稍后客户会通过电话联系您,请保持通话畅通');
                 } else {
                     alert('预约失败');
                 }
             }
         });
-
     }
 
 </script>

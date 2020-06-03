@@ -11,7 +11,8 @@ namespace BookStore.WebApp.Admins.main
     public partial class Top : System.Web.UI.Page
     {
         private UsersService usersSvc = new UsersService();
-        public string NickName;
+        private AppointmentService appointmentSvc = new AppointmentService();
+        public string NickName, count;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (IsPostBack)
@@ -42,6 +43,11 @@ namespace BookStore.WebApp.Admins.main
                 {
                     NickName = user.NickName;
                 }
+                //正常的写法这个地方需要写2步:
+                //(1) 先去查询审核状态表当中名称为正在审核的id
+                //(2) 通过我们找到的这个id,进行下面的查询
+                var rs = appointmentSvc.GetCountByAuditId(2);
+                count = rs.ToString();
             }
         }
     }
