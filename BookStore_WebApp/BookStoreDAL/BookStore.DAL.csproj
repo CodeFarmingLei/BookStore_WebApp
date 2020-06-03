@@ -42,6 +42,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AboutManager.cs" />
+    <Compile Include="AppointmentManager.cs" />
+    <Compile Include="AuditManager.cs" />
     <Compile Include="WebMenuManager.cs" />
     <Compile Include="UsersPermissionManager.cs" />
     <Compile Include="UsersManager.cs" />

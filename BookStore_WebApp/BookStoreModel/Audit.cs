@@ -2,19 +2,10 @@
 
 namespace BookStore.Model
 {
-    public class Appointment
+    public class Audit
     {
         public int Id { get; set; }
-
-
-        public string RealName { get; set; }
-
-        public string Telephone { get; set; }
-
-        public int Amount { get; set; }
-
-        public int AuditId { get; set; }
-
+        public string Title { get; set; }
         public DateTime CreateTime { get; set; } = DateTime.Now;
         public DateTime UpdateTime { get; set; } = DateTime.Now;
     }

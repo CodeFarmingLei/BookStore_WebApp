@@ -71,6 +71,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Admins\About\EditAbout.aspx" />
+    <Content Include="Admins\Appointment\AppointmentList.aspx" />
     <Content Include="Admins\css\select.css" />
     <Content Include="Admins\css\style.css" />
     <Content Include="Admins\editor\kindeditor.js" />
@@ -495,6 +496,7 @@
     <Content Include="upload\users\codelei.jpg" />
     <Content Include="Web.config" />
     <Content Include="Web\css1\style.css" />
+    <Content Include="Web\head.ascx" />
     <Content Include="Web\images\banner.jpg" />
     <Content Include="Web\images\banner_1.png" />
     <Content Include="Web\images\banner_2.png" />
@@ -548,6 +550,13 @@
     </Compile>
     <Compile Include="Admins\About\EditAbout.aspx.designer.cs">
       <DependentUpon>EditAbout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admins\Appointment\AppointmentList.aspx.cs">
+      <DependentUpon>AppointmentList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admins\Appointment\AppointmentList.aspx.designer.cs">
+      <DependentUpon>AppointmentList.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admins\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
@@ -716,6 +725,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Hanlder\AddAppointmentHandler.ashx.cs">
+      <DependentUpon>AddAppointmentHandler.ashx</DependentUpon>
+    </Compile>
     <Compile Include="index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -731,6 +743,13 @@
     <Compile Include="Web\FrontEnd.Master.designer.cs">
       <DependentUpon>FrontEnd.Master</DependentUpon>
     </Compile>
+    <Compile Include="Web\head.ascx.cs">
+      <DependentUpon>head.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Web\head.ascx.designer.cs">
+      <DependentUpon>head.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Web\index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -742,6 +761,7 @@
   <ItemGroup>
     <Content Include="kindeditor\asp.net\file_manager_json.ashx" />
     <Content Include="kindeditor\asp.net\upload_json.ashx" />
+    <Content Include="Hanlder\AddAppointmentHandler.ashx" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

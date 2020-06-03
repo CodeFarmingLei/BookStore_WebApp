@@ -1,10 +1,20 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="FrontEnd.master.cs" Inherits="BookStore.WebApp.Web.FrontEnd" %>
 
+<%@ Register Src="head.ascx" TagPrefix="head" TagName="head" %>
+<!--
+ 上面的语句为导入用户控件的语句, 
+ Register 代表注册,表示在当前页面内对这个用户控件进行注册
+ src      代表要使用的用户控件所在的位置,里面存放这个路径
+ tagPrefix  tag 标签  Prefix 前缀(Pre 前面  fix 固定),标签以什么为起始 
+ 例如: <asp:TextBox></asp:TextBox>  其中asp就是tagPrefix设定的
+ tagName   tag标签  Name 名称 这个是设定冒号后面的名字,上面的TextBox案例当中的TextBox就是它设定的
+-->
+
 <!DOCTYPE html>
 
 <html>
 <head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link rel="stylesheet" type="text/css" href="css1/style.css" />
     <script type="text/javascript" src="js1/jquery-1.9.1.js"></script>
@@ -14,71 +24,18 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <div class="top">
-            <div class="top_nr">
-                <p>您好欢迎您来到好信速贷！</p>
-                <b>加入收藏</b>
-                <b>|</b>
-                <b>设为首页</b>
-            </div>
-        </div>
-        <div class="nav">
-            <div class="nav_l"><a href="index.html"><img src="images/logo.jpg" width="214" height="86" /></a></div>
-            <div class="nav_r">
-                <ul>
-                    <li class="cur"><a href="#">首 页</a></li>
-                    <li><a href="#">信用贷款</a></li>
-                    <li><a href="#">房产贷款</a></li>
-                    <li><a href="#">车辆贷款</a></li>
-                    <li><a href="#">企业贷款</a></li>
-                    <li><a href="#">我要贷款</a></li>
-                    <li><a href="#">关于我们</a></li>
-                    <li><a href="#">联系我们</a></li>
-                </ul> 
-                <div class="curBg"></div>
-                <div class="cls"></div>
-            </div>
-        </div>
-        <div class="banner">
-            <div class="banner_nr">
-                <div class="banner_1">
-                    <div class="banner_2">
-                        立即预约<span><img src="images/banner_2.png" width="149" height="36" /></span>
-                        <div class="clear"></div>
-                    </div>
-                    <div class="banner_3">
-                        <div class="banner_31">
-                            <p>您的姓名:</p>
-                            <input name="" class="banner_31_r" value="如张先生" type="text" />
-                            <div class="clear"></div>
-                        </div>
-                        <div class="banner_31">
-                            <p>手机号码:</p>
-                            <input name="" class="banner_31_r" value="您的手机号" type="text" />
-                            <div class="clear"></div>
-                        </div>
-                        <div class="banner_31">
-                            <p>申贷金额:</p>
-                            <input name="" class="banner_31_r2" value="输入数字" type="text" />
-                            <div class="clear"></div>
-                        </div>
-                        <div class="clear"></div>
-                    </div>
-                    <div class="banner_4"><a href="#"></a></div>
-                </div>
-                <div class="clear"></div>
-            </div>
-        </div>
-    
-            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-            </asp:ContentPlaceHolder>
+        <head:head runat="server" id="tagHead" />
+
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
         <div class="index_3">
             <div class="index_3_nr">
                 <p><%=about_title %></p>
                 <div class="clear"></div>
                 <b><%=about_content.Length > 100 ? about_content.Substring(0,100)+"......" : about_content+"......" %></b>
                 <div class="clear"></div>
-                <div class="index_3_nran"><img src="images/index_3_nran.png" width="114" height="35" /></div>
+                <div class="index_3_nran">
+                    <img src="images/index_3_nran.png" width="114" height="35" /></div>
             </div>
         </div>
         <div class="fotter">
@@ -86,8 +43,10 @@
                 <p>联系我们</p>
                 <b>铁西区建设大路爱工街和谐大厦A座1205室</b>
                 <div class="clear"></div>
-                <div class="fotter12"><img src="images/div.png" width="67" height="23" /></div>
-                <div class="fotter12"><img src="images/div.png" width="67" height="23" /></div>
+                <div class="fotter12">
+                    <img src="images/div.png" width="67" height="23" /></div>
+                <div class="fotter12">
+                    <img src="images/div.png" width="67" height="23" /></div>
             </div>
             <div class="fotter2">
                 <p>关于我们</p>
@@ -113,7 +72,8 @@
                 </ul>
             </div>
             <div class="fotter4">
-                <div class="fotter41"><img src="images/fotter41.png" width="114" height="114" /></div>
+                <div class="fotter41">
+                    <img src="images/fotter41.png" width="114" height="114" /></div>
                 <div class="fotter42">
                     <p>024-315112000</p>
                     <div class="fotter421">周一到周日08:00-18:00热线电话</div>
@@ -124,9 +84,11 @@
         </div>
         <div class="fotter5">
             <p>辽ICP备09009209号-1©  沈阳网站建设：龙兴科技</p>
-            <div class="fotter51"><img src="images/fotter51.png" width="50" height="12" /></div>
+            <div class="fotter51">
+                <img src="images/fotter51.png" width="50" height="12" /></div>
             <p>分享：</p>
-            <div class="fotter52"><img src="images/fotter52.png" /></div>
+            <div class="fotter52">
+                <img src="images/fotter52.png" /></div>
         </div>
     </form>
 </body>

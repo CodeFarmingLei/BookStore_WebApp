@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="About.cs" />
     <Compile Include="Appointment.cs" />
+    <Compile Include="Audit.cs" />
     <Compile Include="Banner.cs" />
     <Compile Include="Contact.cs" />
     <Compile Include="Copyright.cs" />

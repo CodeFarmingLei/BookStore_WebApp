@@ -15,7 +15,7 @@ namespace BookStore.DAL
             {
                 new SqlParameter("@Title",seo.Title),
                 new SqlParameter("@Keyword",seo.Keyword),
-                new SqlParameter("@Description",seo.Descriptions),
+                new SqlParameter("@Description",seo.Description),
                 new SqlParameter("@WebMenuId",seo.WebMenuId)
             };
             return SqlHelper.ExecuteNonQuery(sql, param);
@@ -28,7 +28,7 @@ namespace BookStore.DAL
             {
                 new SqlParameter("@Title",seo.Title),
                 new SqlParameter("@Keyword",seo.Keyword),
-                new SqlParameter("@Description",seo.Descriptions),
+                new SqlParameter("@Description",seo.Description),
                 new SqlParameter("@WebMenuId",seo.WebMenuId),
                 new SqlParameter("@Id",seo.Id)
             };
@@ -119,7 +119,7 @@ namespace BookStore.DAL
                 Id = int.Parse(dr["Id"].ToString()),
                 Title = dr["Title"].ToString(),
                 Keyword = dr["Keyword"].ToString(),
-                Descriptions = dr["Descriptions"].ToString(),
+                Description = dr["Description"].ToString(),
                 WebMenuId = int.Parse(dr["WebMenuId"].ToString())
             };
         }

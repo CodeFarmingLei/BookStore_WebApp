@@ -1,16 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace BookStore.Model
+﻿namespace BookStore.Model
 {
-    public class FriendLink //友情链接表
+    public class FriendLink
     {
         public int Id { get; set; }
-        public string Title { get; set; }    //标题
-        public string Link { get; set; }    //链接
-        public bool IsShow { get; set; }    //是否展示
+        public string Title { get; set; }
+        public string Link { get; set; }
+        public bool IsShow { get; set; }
     }
 }

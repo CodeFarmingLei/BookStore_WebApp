@@ -7,7 +7,8 @@ namespace BookStore.DAL
     {
         public int Add(About model)
         {
-            string sql = "insert into About(Title,Content,Images,CreateTime,UpdateTime) values(@Title,@Content,@Images,@CreateTime,@UpdateTime)";
+            string sql = "insert into About(Title,Content,Images,CreateTime,UpdateTime) " +
+                         "values(@Title,@Content,@Images,@CreateTime,@UpdateTime)";
 
             SqlParameter[] param =
             {

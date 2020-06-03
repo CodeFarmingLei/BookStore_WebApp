@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Web/FrontEnd.Master" AutoEventWireup="true" CodeBehind="index.aspx.cs" Inherits="BookStore.WebApp.Web.index" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <title>好信速贷 ---- 首页</title>
+    <title>好信速贷---首页</title>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <ul class="index_1">

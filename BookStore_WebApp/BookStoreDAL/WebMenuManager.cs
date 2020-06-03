@@ -98,7 +98,7 @@ namespace BookStore.DAL
 
         public WebMenu GetWebMenuById(int id)
         {
-            string sql = "select * where Id = @Id";
+            string sql = "select * from WebMenu where Id = @Id";
             SqlParameter[] param =
             {
                 new SqlParameter("@Id",id)

@@ -42,6 +42,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AboutService.cs" />
+    <Compile Include="AppointmentService.cs" />
+    <Compile Include="AuditService.cs" />
     <Compile Include="WebMenuService.cs" />
     <Compile Include="UsersPermissionService.cs" />
     <Compile Include="UsersService.cs" />
